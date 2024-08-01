@@ -2,39 +2,39 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 weight_by_split <- function(A_, split_by, n_groups) {
-    .Call(`_singlet_weight_by_split`, A_, split_by, n_groups)
+    .Call('_singlet_weight_by_split', PACKAGE = 'singlet', A_, split_by, n_groups)
 }
 
 rowwise_compress_sparse <- function(A, n = 10L, threads = 0L) {
-    .Call(`_singlet_rowwise_compress_sparse`, A, n, threads)
+    .Call('_singlet_rowwise_compress_sparse', PACKAGE = 'singlet', A, n, threads)
 }
 
 rowwise_compress_dense <- function(A, n = 10L, threads = 0L) {
-    .Call(`_singlet_rowwise_compress_dense`, A, n, threads)
+    .Call('_singlet_rowwise_compress_dense', PACKAGE = 'singlet', A, n, threads)
 }
 
 calc_L1_matrix <- function(h, batch_id) {
-    .Call(`_singlet_calc_L1_matrix`, h, batch_id)
+    .Call('_singlet_calc_L1_matrix', PACKAGE = 'singlet', h, batch_id)
 }
 
 Rcpp_predict <- function(A, w, L1, L2, threads) {
-    .Call(`_singlet_Rcpp_predict`, A, w, L1, L2, threads)
+    .Call('_singlet_Rcpp_predict', PACKAGE = 'singlet', A, w, L1, L2, threads)
 }
 
 c_project_model <- function(A, w, L1, L2, threads) {
-    .Call(`_singlet_c_project_model`, A, w, L1, L2, threads)
+    .Call('_singlet_c_project_model', PACKAGE = 'singlet', A, w, L1, L2, threads)
 }
 
 c_nmf <- function(A, At, tol, maxit, verbose, L1_w, L1_h, L2_w, L2_h, threads, w) {
-    .Call(`_singlet_c_nmf`, A, At, tol, maxit, verbose, L1_w, L1_h, L2_w, L2_h, threads, w)
+    .Call('_singlet_c_nmf', PACKAGE = 'singlet', A, At, tol, maxit, verbose, L1_w, L1_h, L2_w, L2_h, threads, w)
 }
 
 c_nmf_batch <- function(A, At, tol, maxit, verbose, L1, L2, threads, w, batch_id) {
-    .Call(`_singlet_c_nmf_batch`, A, At, tol, maxit, verbose, L1, L2, threads, w, batch_id)
+    .Call('_singlet_c_nmf_batch', PACKAGE = 'singlet', A, At, tol, maxit, verbose, L1, L2, threads, w, batch_id)
 }
 
 c_nmf_sparse_list <- function(A_, At_, tol, maxit, verbose, L1, L2, threads, w) {
-    .Call(`_singlet_c_nmf_sparse_list`, A_, At_, tol, maxit, verbose, L1, L2, threads, w)
+    .Call('_singlet_c_nmf_sparse_list', PACKAGE = 'singlet', A_, At_, tol, maxit, verbose, L1, L2, threads, w)
 }
 
 #' Write an IVCSC matrix
@@ -44,70 +44,70 @@ c_nmf_sparse_list <- function(A_, At_, tol, maxit, verbose, L1, L2, threads, w) 
 #' @export
 #'
 write_IVCSC <- function(L, verbose = TRUE) {
-    .Call(`_singlet_write_IVCSC`, L, verbose)
+    .Call('_singlet_write_IVCSC', PACKAGE = 'singlet', L, verbose)
 }
 
 save_IVSparse <- function(A_, verbose = TRUE) {
-    .Call(`_singlet_save_IVSparse`, A_, verbose)
+    .Call('_singlet_save_IVSparse', PACKAGE = 'singlet', A_, verbose)
 }
 
 build_IVCSC2 <- function(L, verbose = TRUE) {
-    .Call(`_singlet_build_IVCSC2`, L, verbose)
+    .Call('_singlet_build_IVCSC2', PACKAGE = 'singlet', L, verbose)
 }
 
 read_IVSparse <- function() {
-    .Call(`_singlet_read_IVSparse`)
+    .Call('_singlet_read_IVSparse', PACKAGE = 'singlet')
 }
 
 run_nmf_on_sparsematrix_list <- function(A_, tol, maxit, verbose, threads, w, use_vcsc = FALSE, L1 = 0, L2 = 0) {
-    .Call(`_singlet_run_nmf_on_sparsematrix_list`, A_, tol, maxit, verbose, threads, w, use_vcsc, L1, L2)
+    .Call('_singlet_run_nmf_on_sparsematrix_list', PACKAGE = 'singlet', A_, tol, maxit, verbose, threads, w, use_vcsc, L1, L2)
 }
 
 c_mu_nmf <- function(A, At, tol, maxit, verbose, L1, L2, threads, w) {
-    .Call(`_singlet_c_mu_nmf`, A, At, tol, maxit, verbose, L1, L2, threads, w)
+    .Call('_singlet_c_mu_nmf', PACKAGE = 'singlet', A, At, tol, maxit, verbose, L1, L2, threads, w)
 }
 
 c_nmf_dense <- function(A, At, tol, maxit, verbose, L1_w, L1_h, L2_w, L2_h, threads, w) {
-    .Call(`_singlet_c_nmf_dense`, A, At, tol, maxit, verbose, L1_w, L1_h, L2_w, L2_h, threads, w)
+    .Call('_singlet_c_nmf_dense', PACKAGE = 'singlet', A, At, tol, maxit, verbose, L1_w, L1_h, L2_w, L2_h, threads, w)
 }
 
 c_linked_nmf <- function(A, At, tol, maxit, verbose, L1, L2, threads, w, link_h, link_w) {
-    .Call(`_singlet_c_linked_nmf`, A, At, tol, maxit, verbose, L1, L2, threads, w, link_h, link_w)
+    .Call('_singlet_c_linked_nmf', PACKAGE = 'singlet', A, At, tol, maxit, verbose, L1, L2, threads, w, link_h, link_w)
 }
 
 c_ard_nmf <- function(A, At, tol, maxit, verbose, L1, L2, threads, w, seed, inv_density, overfit_threshold, trace_test_mse) {
-    .Call(`_singlet_c_ard_nmf`, A, At, tol, maxit, verbose, L1, L2, threads, w, seed, inv_density, overfit_threshold, trace_test_mse)
+    .Call('_singlet_c_ard_nmf', PACKAGE = 'singlet', A, At, tol, maxit, verbose, L1, L2, threads, w, seed, inv_density, overfit_threshold, trace_test_mse)
 }
 
 c_ard_nmf_sparse_list <- function(A_, At_, tol, maxit, verbose, L1, L2, threads, w, rng_seed, inv_density, overfit_threshold, trace_test_mse) {
-    .Call(`_singlet_c_ard_nmf_sparse_list`, A_, At_, tol, maxit, verbose, L1, L2, threads, w, rng_seed, inv_density, overfit_threshold, trace_test_mse)
+    .Call('_singlet_c_ard_nmf_sparse_list', PACKAGE = 'singlet', A_, At_, tol, maxit, verbose, L1, L2, threads, w, rng_seed, inv_density, overfit_threshold, trace_test_mse)
 }
 
 c_ard_nmf_dense <- function(A, At, tol, maxit, verbose, L1, L2, threads, w, seed, inv_density, overfit_threshold, trace_test_mse) {
-    .Call(`_singlet_c_ard_nmf_dense`, A, At, tol, maxit, verbose, L1, L2, threads, w, seed, inv_density, overfit_threshold, trace_test_mse)
+    .Call('_singlet_c_ard_nmf_dense', PACKAGE = 'singlet', A, At, tol, maxit, verbose, L1, L2, threads, w, seed, inv_density, overfit_threshold, trace_test_mse)
 }
 
 spatial_graph <- function(c1, c2, max_dist, max_k = 100L, threads = 0L) {
-    .Call(`_singlet_spatial_graph`, c1, c2, max_dist, max_k, threads)
+    .Call('_singlet_spatial_graph', PACKAGE = 'singlet', c1, c2, max_dist, max_k, threads)
 }
 
 c_LKNN <- function(m, coord_x, coord_y, k, radius, metric, similarity, max_dist, verbose, threads) {
-    .Call(`_singlet_c_LKNN`, m, coord_x, coord_y, k, radius, metric, similarity, max_dist, verbose, threads)
+    .Call('_singlet_c_LKNN', PACKAGE = 'singlet', m, coord_x, coord_y, k, radius, metric, similarity, max_dist, verbose, threads)
 }
 
 c_SNN <- function(G, min_similarity, threads) {
-    .Call(`_singlet_c_SNN`, G, min_similarity, threads)
+    .Call('_singlet_c_SNN', PACKAGE = 'singlet', G, min_similarity, threads)
 }
 
 c_gcnmf <- function(A, At, G, tol, maxit, verbose, L1, L2, threads, w) {
-    .Call(`_singlet_c_gcnmf`, A, At, G, tol, maxit, verbose, L1, L2, threads, w)
+    .Call('_singlet_c_gcnmf', PACKAGE = 'singlet', A, At, G, tol, maxit, verbose, L1, L2, threads, w)
 }
 
 c_differentiate_model <- function(h, G) {
-    .Call(`_singlet_c_differentiate_model`, h, G)
+    .Call('_singlet_c_differentiate_model', PACKAGE = 'singlet', h, G)
 }
 
 c_assign_cells_to_edge_clusters <- function(G, h_diff_clusters) {
-    .Call(`_singlet_c_assign_cells_to_edge_clusters`, G, h_diff_clusters)
+    .Call('_singlet_c_assign_cells_to_edge_clusters', PACKAGE = 'singlet', G, h_diff_clusters)
 }
 

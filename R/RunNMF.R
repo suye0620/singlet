@@ -35,7 +35,7 @@
 #'   NormalizeData() %>%
 #'   RunNMF() -> pbmc3k
 #' }
-#' @seealso \code{\link{RunLNMF}}, \code{\link{RankPlot}}, \code{\link{MetadataSummary}}
+#' @seealso \code{\link{RankPlot}}, \code{\link{MetadataSummary}}
 #'
 #' @export
 #'

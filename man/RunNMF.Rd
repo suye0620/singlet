@@ -114,5 +114,5 @@ get_pbmc3k_data() \%>\%
 }
 }
 \seealso{
-\code{\link{RunLNMF}}, \code{\link{RankPlot}}, \code{\link{MetadataSummary}}
+\code{\link{RankPlot}}, \code{\link{MetadataSummary}}
 }
